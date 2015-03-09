@@ -100,16 +100,16 @@ foreign language, Vim makes use of a small, controlled vocabulary. It is quick
 to learn. You will be able to do most common tasks after a week or so of
 practicing. And you can stop there. At a level of basic proficiency, Vim will
 already feel like a professional tool, adequate to the task of composing text
-with a measure of kinetic pleasure and expertise. But once you understand that
-Vim is a language, you may also start getting interested in Vimscript, the
-computer language behind Vim. Although not the most beloved of computer
-languages, Vimscript ultimately offers **a modular toolkit for building your
-own editor.** Where other editors have fairly rigid ideas about how writing and
-text editing should work, Vim gives you complete control over all expects of
-word manipulation. For those not interested in programming, hundreds if not
-thousands of modules are available, tailoring Vim to individual needs and
-workflows. (We will cover the most common ones, relevant to the humanities at
-the end of the article.)
+with a sense of kinetic joy (some people liken it to being good at a video
+game). But once you understand that Vim is a language, you may also start
+getting interested in Vimscript, the computer language behind Vim. Although not
+the most beloved of computer languages, Vimscript ultimately offers **a modular
+toolkit for building your own editor.** Where other editors have fairly rigid
+ideas about how writing and text editing should work, Vim gives you complete
+control over all expects of word manipulation. For those not interested in
+programming, hundreds if not thousands of modules are available, tailoring Vim
+to individual needs and workflows. (We will cover the most common ones,
+relevant to the humanities at the end of the article.)
 
 To summarize, Vim philosophy is a set of related concepts that start with plain
 text and lead to modal editing, text awareness, command composability, and,
