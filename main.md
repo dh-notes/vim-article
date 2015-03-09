@@ -10,66 +10,69 @@ NeoVim). Vim is also a philosophy of editing text--a way of doing things that
 could be (and often is) implemented in various contexts. For this reason, it is
 not our intention to start another text editor war. Vim-like modes are commonly
 implemented in many modern text editors like Emacs and Sublime. It is also
-possible to implement distinct ideas from Vim into other contexts. There are
+possible to implement distinct ideas from Vim into other programs. There are
 several plugins that offer Vim shortcuts for the browser, for example. Our plan
 then is to talk about Vim as both an idea and a piece of software. Because
 switching to Vim is not a trivial endeavor, we want you to understand the
 stakes and the mind shift made possible by this elegant interface with the
 word. We will begin then with the philosophy behind Vim editing and end with
-the instrumental details of Vim as software.
+the instrumental details of Vim as an editor.
 
 ## Key Concepts
 
 What are the ideas behind the Vim way of doing things? Rather than divining the
 intentions of the program's developers (Ken Thompson, Bill Joy, Bran Moolenaar,
 and others) we will try to capture the spirit of the endeavor as we see it.
+
 Let's start with the most obvious one: Vim is a **plain text** editor. That
 means that you will use other tools to format and to set your text into print.
 In Vim, text is just text--there are no italics or fancy fonts to speak of. We
 use Markdown and Pandoc to format our texts and to generate files in Microsoft
 Word, Open Office, Adobe Acrobat, and HTML formats. If that sounds limiting, it
-is on purpose! The general Unix philosophy towards developing software is "do
+is, on purpose! The general Unix philosophy towards developing software is "do
 one thing and do it well." Rather than being mediocre at many things related to
 word processing, Vim does one thing exceedingly well. Along with Emacs and a
 few other candidates for the title, it is the most advanced *text editor*
-available. There are other excellent, professional-grade tools available for
-typesetting and formatting text.[^ln-plain]
+available. There are other excellent, professional-grade tools created for the
+typesetting and the formatting of text.[^ln-plain]
 
-[^ln-plain]: See "Sustainable Authorship in Plain Text using Pandoc and
-Markdown" By Dennis Tenen and Grant Grant Wythoff in the [Programming
+[^ln-plain]: On what these tools are and on the why it is good for our
+community to work in plain text file formats read "Sustainable Authorship in
+Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Grant Wythoff
+in the [Programming
 Historian](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
 
 Vim is further synonymous with **modal editing**. For someone coming from
 mode-less text editing (Open Office, Microsoft Word, and pretty much every
-other text box) modes, from all Vim's special features, will require the most
-cognitive adjustment. That adjustment comes quickly. With a few hours of
-experience modes will become completely natural. But be forewarned, that once
+other text box) modes, from all of Vim's special features, will require the
+most cognitive adjustment. That adjustment comes quickly. Within a few hours of
+practicing, modes will become completely natural. But be forewarned, that once
 you unlock the power of modal editing, it will also forever mar all other ways
 of interacting with text. You will want it everywhere: in your email and in
 your to-do list.
 
 The idea behind modal editing is simple. The process of writing consists of
-several distinct kinds of operations, most importantly typing and manipulating
+several distinct kinds of operations, chief among them typing and manipulating
 text. In most editors, those two things happen in the same "place" if you will.
-Vim separates typing from text manipulation into different modes. You type
-in what's called the "insert" mode, which functions pretty much as you would
-expect. But in the "Normal" mode a whole new series of powerful text
-manipulation tools becomes available to the writer. And because you are no
-longer typing, you can use your keyboard for editing text. We will go over the
-commands in detail later. For now you can start Vim and press `i` to enter
-insert mode (see the bottom left of the screen). Press `Escape` to exit into
-the Normal mode again. As you get better at Vim you will spend more and more of
-your time in the Normal mode.
+Vim separates typing from text manipulation into different modes. You type in
+what's called "Insert mode," which functions pretty much as you would expect.
+But in "Normal mode" a whole new series of powerful text manipulation tools
+becomes available to the writer. And because you are no longer typing, you can
+use your keyboard for editing text. We will go over the commands in detail
+later. For now, you can start Vim (gVim or NeoVim) and press `i` to enter
+Insert mode (see bottom left of your screen). Press `Escape` to exit into
+Normal mode again. As you get better at Vim you will spend more and more of
+your time in Normal mode.
 
-The best thing about the normal mode, and the reason for Vim being a fitting
-tool for the humanities, is that it is **text aware**. Text awareness means
-that the editor intrinsically "understands" semantic humanly-meaningful units
-like characters, words, sentences, and paragraphs. Say for example you want to
+The best thing about Normal mode, and the reason for Vim being a fitting tool
+for the humanities, is that it is **text aware**. Text awareness means that the
+editor intrinsically "understands" semantic humanly-meaningful units like
+characters, words, sentences, and paragraphs. Say for example you want to
 delete a word in your regular text editor. Pay attention to your exact
-keystrokes. It is likely that one would either just backspace a few times until
+keystrokes. It is likely that you would either just backspace a few times until
 the word is gone or use the mouse to select the word to be deleted. You can try
-doing the same in Vim's Insert mode. But exit to normal mode and you are now
-able to delete the word under your cursor by pressing `daw` in succession. The
+doing the same in Vim's Insert mode. But exit to Normal mode and you are now
+able to delete the word under your cursor by typing `daw` in succession. The
 keys `daw` stand for "delete a word."  Here's where things get neat. What do
 you think `das` does? In Normal mode, the keys `das` stand for "delete a
 sentence." In either case, the delete command will delete around your cursor
@@ -77,25 +80,25 @@ position. `daw` and `das` delete the current word and the current sentence,
 respectively (even when your cursor is located mid-word or mid-sentence).
 
 The small effect of modes and text awareness is the ease with which you can
-begin to memorize text manipulation shortcuts. Vim wants to keep you fingers at
-the keyboard, at the home row, minimizing finger movement for chord-like
-progressions like `Ctrl-C` and `Ctrl-P` (the usual way in which you copy and
-paste selections, for example). Because you don't need to use the mouse that
-much (or at all) when you are good at Vim and because the commands are compact,
-there is not much wrist movement and many writers report reduced hand strain.
-But these are small luxuries. The big payoff of modes and text awareness is
-**command composability.** In some sense, Vim is a language for interacting
-with language. "Delete a word" has a grammatical structure: an verb and a
-noun. Once you become fluent in this language, you will be able to compose
-commands "on the fly," without thinking or looking things up in the help file.
-A measure of flow and fluency becomes possible, elevating mere editing into
-handcraft. As literary scholars we are biased towards tools that understand
-language on its own terms.
+begin to memorize text manipulation shortcuts. Vim wants to keep your fingers
+at the keyboard, at home row, minimizing finger movement involved in chord-like
+progressions like `Ctrl-C` and `Ctrl-P` (the usual way to copy and paste
+selections, for example). Because you don't need to use the mouse that much (or
+at all) when you are good at Vim and because the commands are compact, your
+wrists remain relatively stable. Many writers report reduced hand strain. But
+these are small luxuries. The big payoff of modes and text awareness is
+**command composability.** In some important sense, Vim is a language for
+interacting with language. "Delete a word" has a grammatical structure: a verb
+and a noun. Once you become fluent in this language, you will be able to
+compose commands "on the fly," without thinking or looking things up. A measure
+of flow and fluency becomes possible, elevating mere editing into handcraft. As
+literary scholars we are biased towards tools that understand language on its
+own terms.
 
-As with any language, the road to fluency is not easy. But compared to a
-foreign language, Vim makes use of a small, controlled vocabulary. It is easy
+As with any language, the road to fluency is not short. But compared to a
+foreign language, Vim makes use of a small, controlled vocabulary. It is quick
 to learn. You will be able to do most common tasks after a week or so of
-practicing. And you can stop there. At the level of basic proficiency, Vim will
+practicing. And you can stop there. At a level of basic proficiency, Vim will
 already feel like a professional tool, adequate to the task of composing text
 with a measure of kinetic pleasure and expertise. But once you understand that
 Vim is a language, you may also start getting interested in Vimscript, the
@@ -109,9 +112,9 @@ workflows. (We will cover the most common ones, relevant to the humanities at
 the end of the article.)
 
 To summarize, Vim philosophy is a set of related concepts that start with plain
-text, leading to modal editing, text awareness, command composability, and,
-finally, a language for building customized text-manipulation software. Any of
-these ideas could be implemented independently of Vim. Vim just happens to
+text and lead to modal editing, text awareness, command composability, and,
+finally, a language for building your own customized text editing software. Any
+of these ideas could be implemented independently of Vim. Vim just happens to
 implement all of them in one small package, installed on most of the world's
 computers (except for Windows) by default since the 1970s, available for free,
 easily extensible, and to further modification by the open-source community.
@@ -119,8 +122,18 @@ easily extensible, and to further modification by the open-source community.
 ## Getting Started with Vim
 
 It is not our intention to supplant the many excellent tutorials on how to get
-started with Vim (including Vim tutor, which can be started BLAH BLAH). The
-barrier to entry into Vim for the non-programmer is its code-centric
+started with Vim (including Vim tutor, which can be started BLAH BLAH). 
+
+Run vimtutor. 
+
+Modes:
+Commands (verbs):
+Text Objects (nouns):
+
+Several common composable commands
+
+## Vim for Prose
+The barrier to entry into Vim for the non-programmer is its code-centric
 "out-of-the-box" defaults. We therefore intend to discuss the issue of
 setting-up Vim for prose editing in particular in this section. In the next
 section, we will conclude by suggesting a few "quality of life" improvements
@@ -133,4 +146,5 @@ The importance of .vimrc.
 
 A minimally viable .vimrc for prose. Annotated.
 
-## Addons
+## Common Addons
+Go for minimal here again. 
