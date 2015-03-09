@@ -62,7 +62,8 @@ use your keyboard for editing text. We will go over the commands in detail
 later. For now, you can start Vim (gVim or NeoVim) and press `i` to enter
 Insert mode (see bottom left of your screen). Press `Escape` to exit into
 Normal mode again. As you get better at Vim you will spend more and more of
-your time in Normal mode.
+your time in Normal mode. To quit Vim, type `ZZ` from Normal mode or `:` and
+then `q`.
 
 The best thing about Normal mode, and the reason for Vim being a fitting tool
 for the humanities, is that it is **text aware**. Text awareness means that the
