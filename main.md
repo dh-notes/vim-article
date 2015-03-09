@@ -75,8 +75,8 @@ the word is gone or use the mouse to select the word to be deleted. You can try
 doing the same in Vim's Insert mode. But exit to Normal mode and you are now
 able to delete the word under your cursor by typing `daw` in succession. The
 keys `daw` stand for "delete a word."  Here's where things get neat. What do
-you think `das` does? In Normal mode, the keys `das` stand for "delete a
-sentence." In either case, the delete command will delete around your cursor
+you think `das` does? In Normal mode, the incantation `das` stands for "delete
+a sentence." In either case, the delete command will delete around your cursor
 position. `daw` and `das` delete the current word and the current sentence,
 respectively (even when your cursor is located mid-word or mid-sentence).
 
@@ -86,7 +86,7 @@ at the keyboard, at home row, minimizing finger movement involved in chord-like
 progressions like `Ctrl-C` and `Ctrl-P` (the usual way to copy and paste
 selections, for example). Because you don't need to use the mouse that much (or
 at all) when you are good at Vim and because the commands are compact, your
-wrists remain relatively stable. Many writers report reduced hand strain. But
+wrists remain relatively still. Many writers report reduced hand strain. But
 these are small luxuries. The big payoff of modes and text awareness is
 **command composability.** In some important sense, Vim is a language for
 interacting with language. "Delete a word" has a grammatical structure: a verb
