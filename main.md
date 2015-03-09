@@ -117,7 +117,7 @@ finally, a language for building your own customized text editing software. Any
 of these ideas could be implemented independently of Vim. Vim just happens to
 implement all of them in one small package, installed on most of the world's
 computers (except for Windows) by default since the 1970s, available for free,
-easily extensible, and to further modification by the open-source community.
+and in open-source, making further modification possible by the community.
 
 ## Getting Started with Vim
 
