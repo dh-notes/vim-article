@@ -118,7 +118,10 @@ finally, a language for building your own customized text editing software. Any
 of these ideas could be implemented independently of Vim. Vim just happens to
 implement all of them in one small package, installed on most of the world's
 computers (except for Windows) by default since the 1970s, available for free,
-and in open-source, making further modification possible by the community.
+and in open-source, making further modification possible. We want more
+humanists to use Vim because we want our community to build better interfaces
+with the word. The editor is at the center of everything that we do and we need
+to take ownership of material contexts of knowledge production.
 
 ## Getting Started with Vim
 
