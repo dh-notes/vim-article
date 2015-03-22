@@ -75,10 +75,13 @@ the word is gone or use the mouse to select the word to be deleted. You can try
 doing the same in Vim's Insert mode. But exit to Normal mode and you are now
 able to delete the word under your cursor by typing `daw` in succession. The
 keys `daw` stand for "delete a word."  Here's where things get neat. What do
-you think `das` does? In Normal mode, the incantation `das` stands for "delete
-a sentence." In either case, the delete command will delete around your cursor
-position. `daw` and `das` delete the current word and the current sentence,
-respectively (even when your cursor is located mid-word or mid-sentence).
+you think `d3w` does? This stands for "delete three words." What about `das`?
+In Normal mode, the incantation `das` stands for "delete a sentence." In either
+case, the delete command will delete around your cursor position. `daw` and
+`das` delete the current word and the current sentence, respectively (even when
+your cursor is located mid-word or mid-sentence). `ci)` stands for "change
+inside parentheses," and it automatically deletes all text inside parentheses,
+and puts you in insert mode so that you can type replacement text. 
 
 The small effect of modes and text awareness is the ease with which you can
 begin to memorize text manipulation shortcuts. Vim wants to keep your fingers
@@ -86,15 +89,16 @@ at the keyboard, at home row, minimizing finger movement involved in chord-like
 progressions like `Ctrl-C` and `Ctrl-P` (the usual way to copy and paste
 selections, for example). Because you don't need to use the mouse that much (or
 at all) when you are good at Vim and because the commands are compact, your
-wrists remain relatively still. Many writers report reduced hand strain. But
-these are small luxuries. The big payoff of modes and text awareness is
-**command composability.** In some important sense, Vim is a language for
-interacting with language. "Delete a word" has a grammatical structure: a verb
-and a noun. Once you become fluent in this language, you will be able to
-compose commands "on the fly," without thinking or looking things up. A measure
-of flow and fluency becomes possible, elevating mere editing into handcraft. As
-literary scholars we are biased towards tools that understand language on its
-own terms.
+wrists remain relatively still. You don't even have to use the arrow keys,
+since vim has very ergonomically relocated these to the home keys `hjkl`.  Many
+writers report reduced hand strain. But these are small luxuries. The big
+payoff of modes and text awareness is **command composability.** In some
+important sense, Vim is a language for interacting with language. "Delete a
+word" has a grammatical structure: a verb and a noun. Once you become fluent in
+this language, you will be able to compose commands "on the fly," without
+thinking or looking things up. A measure of flow and fluency becomes possible,
+elevating mere editing into handcraft. As literary scholars we are biased
+towards tools that understand language on its own terms.
 
 As with any language, the road to fluency is not short. But compared to a
 foreign language, Vim makes use of a small, controlled vocabulary. It is quick
@@ -126,15 +130,40 @@ to take ownership of material contexts of knowledge production.
 ## Getting Started with Vim
 
 It is not our intention to supplant the many excellent tutorials on how to get
-started with Vim (including Vim tutor, which can be started BLAH BLAH). 
+started with Vim (including Vim tutor, which, if you run Linux or MacOS,  
+can be started simply by typing the command `vimtutor` at your terminal). 
 
 Run vimtutor. 
 
 Modes:
-Commands (verbs):
-Text Objects (nouns):
 
-Several common composable commands
+Modifiers (adverbs): 
+
+ * `8`: "perform the next command 8 times"  
+
+Commands (verbs):
+ 
+ * `d`: "delete" 
+ * `y`: "yank, or copy" 
+
+Prepositions: 
+ 
+ * `i`: "inside" 
+ * `t`: "until" 
+
+Text Objects (nouns):
+ 
+ * `s`: "sentence" 
+ * `$`: "the end of the current line" 
+ * `%`: "until finding the matching bracket, parenthesis, or other entity" 
+
+Several common commands composed from these words: 
+
+ * `dt,` "delete until the comma" 
+ * `di"` "delete inside the quotation marks"  
+ * `8.` "run the last command another 8 times" 
+ * `y%` "copy (yank) all text until the matching bracket or parenthesis" 
+
 
 ## Vim for Prose
 The barrier to entry into Vim for the non-programmer is its code-centric
@@ -150,5 +179,32 @@ The importance of .vimrc.
 
 A minimally viable .vimrc for prose. Annotated.
 
+```viml
+" Turns off vintage backwards-compatibility with the `vi` editor. 
+set nocompatible
+
+" This makes it so that vim doesn't try to automatically format long lines 
+" of prose as if they were code.
+setlocal formatoptions=l 
+
+" Turn on word wrapping, to avoid typing really long lines that extend horizontally. 
+set wrap
+
+" Break lines on words, instead of characters, which looks better for prose. 
+set linebreak
+
+" Use `j` and `k` to move within wrapped lines, in addition to ordinary lines. 
+map j gj
+map k gk
+```
+
 ## Common Addons
 Go for minimal here again. 
+
+ * [vim-pencil](https://github.com/reedes/vim-pencil): tweaks that make vim
+   better for prose writing. 
+ * [vim-surround](https://github.com/tpope/vim-surround): adds "nouns" that
+   allow you to easily change surrounding punctuation marks or tags. Use `cs'"`
+   to change surrounding single quotes to double quotes, for example.
+ * [NERDTree](https://github.com/scrooloose/nerdtree): allows you to open a
+   sidebar that shows a list of the files in your current directory.  
