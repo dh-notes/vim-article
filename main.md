@@ -1,7 +1,8 @@
 ---
 title: "Vim: Text Editor for the Humanities"
-author:
-
+authors:
+ - Dennis Tenen
+ - Jonathan Reeve
 ---
 
 The first thing to note about Vim is that it is not merely an editor or a
@@ -37,8 +38,8 @@ available. There are other excellent, professional-grade tools created for the
 typesetting and the formatting of text.[^ln-plain]
 
 [^ln-plain]: On what these tools are and on the why it is good for our
-community to work in plain text file formats read "Sustainable Authorship in
-Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Grant Wythoff
+community to work in plain text file formats, read "Sustainable Authorship in
+Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff
 in the [Programming
 Historian](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
 
@@ -62,35 +63,36 @@ use your keyboard for editing text. We will go over the commands in detail
 later. For now, you can start Vim (gVim or NeoVim) and press `i` to enter
 Insert mode (see bottom left of your screen). Press `Escape` to exit into
 Normal mode again. As you get better at Vim you will spend more and more of
-your time in Normal mode. To quit Vim, type `ZZ` from Normal mode or `:` and
-then `q`.
+your time in Normal mode. To quit Vim, type `ZZ` from Normal mode or `:q`.  
 
-The best thing about Normal mode, and the reason for Vim being a fitting tool
-for the humanities, is that it is **text aware**. Text awareness means that the
-editor intrinsically "understands" semantic humanly-meaningful units like
-characters, words, sentences, and paragraphs. Say for example you want to
-delete a word in your regular text editor. Pay attention to your exact
-keystrokes. It is likely that you would either just backspace a few times until
-the word is gone or use the mouse to select the word to be deleted. You can try
-doing the same in Vim's Insert mode. But exit to Normal mode and you are now
-able to delete the word under your cursor by typing `daw` in succession. The
-keys `daw` stand for "delete a word."  Here's where things get neat. What do
-you think `d3w` does? This stands for "delete three words." What about `das`?
-In Normal mode, the incantation `das` stands for "delete a sentence." In either
-case, the delete command will delete around your cursor position. `daw` and
-`das` delete the current word and the current sentence, respectively (even when
-your cursor is located mid-word or mid-sentence). `ci)` stands for "change
-inside parentheses," and it automatically deletes all text inside parentheses,
-and puts you in insert mode so that you can type replacement text. 
+The best thing about Normal mode, and the reason Vim is a fitting tool for the
+humanities, is that it is **text aware**. Text awareness means that the editor
+intrinsically "understands" semantic humanly-meaningful units like characters,
+words, sentences, and paragraphs. Say for example you want to delete a word in
+your regular text editor. Pay attention to your exact keystrokes. It is likely
+that you would either just backspace a few times until the word is gone or use
+the mouse to select the word to be deleted. This approach is frequently
+imprecise, because it is editing on the level of the character, rather than
+semantic units. You can try doing the same in Vim's Insert mode. But exit to
+Normal mode and you are now able to delete the word under your cursor by typing
+`daw`. The keys `daw` stand for "delete a word." Here's where things get neat.
+What do you think `d3w` does? This stands for "delete three words." What about
+`das`?  In Normal mode, the incantation `das` stands for "delete a sentence."
+In either case, the delete command will delete around your cursor position.
+`daw` and `das` delete the current word and the current sentence, respectively,
+even when your cursor is located mid-word or mid-sentence. Likewise, `ci)`,
+which  stands for "change inside parentheses," will allow you to replace all
+the text that appears between parentheses, without requiring you to select that
+text precisely with your mouse.
 
 The small effect of modes and text awareness is the ease with which you can
-begin to memorize text manipulation shortcuts. Vim wants to keep your fingers
-at the keyboard, at home row, minimizing finger movement involved in chord-like
-progressions like `Ctrl-C` and `Ctrl-P` (the usual way to copy and paste
-selections, for example). Because you don't need to use the mouse that much (or
-at all) when you are good at Vim and because the commands are compact, your
-wrists remain relatively still. You don't even have to use the arrow keys,
-since vim has very ergonomically relocated these to the home keys `hjkl`.  Many
+begin to memorize text manipulation shortcuts. Vim is ergonomically designed to
+keep your fingers at the keyboard, at home row, minimizing finger movement
+involved in chord-like progressions like `Ctrl-C` and `Ctrl-P` (the usual way
+to copy and paste selections, for example). Because you don't need to use the
+mouse that much (or at all) when you are good at Vim and because the commands
+are compact, your wrists remain relatively still. You don't even have to use
+the arrow keys, since Vim has reproduced these at the home keys `hjkl`.  Many
 writers report reduced hand strain. But these are small luxuries. The big
 payoff of modes and text awareness is **command composability.** In some
 important sense, Vim is a language for interacting with language. "Delete a
@@ -130,10 +132,8 @@ to take ownership of material contexts of knowledge production.
 ## Getting Started with Vim
 
 It is not our intention to supplant the many excellent tutorials on how to get
-started with Vim (including Vim tutor, which, if you run Linux or MacOS,  
-can be started simply by typing the command `vimtutor` at your terminal). 
-
-Run vimtutor. 
+started with Vim, but here is a sampling of Vim commands that may stimulate
+your curiosity.  
 
 Modes:
 
@@ -144,17 +144,16 @@ Modifiers (adverbs):
 Commands (verbs):
  
  * `d`: "delete" 
- * `y`: "yank, or copy" 
-
-Prepositions: 
- 
- * `i`: "inside" 
- * `t`: "until" 
+ * `y`: copy, or "yank"
 
 Text Objects (nouns):
  
- * `s`: "sentence" 
- * `$`: "the end of the current line" 
+ * `as`: "a sentence" 
+ * `ip`: "inside this paragraph" 
+
+Movements (prepositional phrases)
+ * `tX`: "until finding character X" 
+ * `$`: "until the end of the current line" 
  * `%`: "until finding the matching bracket, parenthesis, or other entity" 
 
 Several common commands composed from these words: 
@@ -164,30 +163,33 @@ Several common commands composed from these words:
  * `8.` "run the last command another 8 times" 
  * `y%` "copy (yank) all text until the matching bracket or parenthesis" 
 
+To learn more, you can run the tutorial program `vimtutor`. If you use Linux or
+MacOS, you already have this program installed, so it's as easy as opening a
+terminal and typing `vimtutor`. The program takes about 25 minutes to complete.
+There are also lots of great tutorials online, including the adventure game
+[Vim Adventures](http://vim-adventures.com/). 
 
 ## Vim for Prose
+
 The barrier to entry into Vim for the non-programmer is its code-centric
 "out-of-the-box" defaults. We therefore intend to discuss the issue of
-setting-up Vim for prose editing in particular in this section. In the next
+setting up Vim for prose editing in particular in this section. In the next
 section, we will conclude by suggesting a few "quality of life" improvements
 that go beyond basic functionality.
 
 Because Vim is a toolkit for building a better editor, we need to do some work
-to customize for writing prose.
+to customize for writing prose. To do this, we can edit Vim's configuration
+file, `.vimrc`, and add a few settings. Here are a few common settings:
 
-The importance of .vimrc.
-
-A minimally viable .vimrc for prose. Annotated.
-
-```viml
-" Turns off vintage backwards-compatibility with the `vi` editor. 
+```vimscript
+" This turns off backwards-compatibility with the `vi` editor, which we won't need. 
 set nocompatible
 
-" This makes it so that vim doesn't try to automatically format long lines 
-" of prose as if they were code.
+" This tells Vim not to format long lines of prose as if they were code.
 setlocal formatoptions=l 
 
-" Turn on word wrapping, to avoid typing really long lines that extend horizontally. 
+" Turn on word wrapping, to avoid typing really long lines that extend
+" horizontally.  
 set wrap
 
 " Break lines on words, instead of characters, which looks better for prose. 
@@ -199,12 +201,18 @@ map k gk
 ```
 
 ## Common Addons
-Go for minimal here again. 
 
- * [vim-pencil](https://github.com/reedes/vim-pencil): tweaks that make vim
-   better for prose writing. 
- * [vim-surround](https://github.com/tpope/vim-surround): adds "nouns" that
+There are thousands of plugins that have been written to extend and improve
+Vim's already rich functionality. Plugins can be installed manually, by
+dropping the files in a `.vim` folder, or by using a plugin manager like
+[Vundle](https://github.com/gmarik/Vundle.vim). Here are a few that could be
+useful to writing prose:  
+
+ * [vim-pencil](https://github.com/reedes/vim-pencil): adds configurations that make vim
+   better for prose writing.  
+ * [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free writing mode
+ * [vim-surround](https://github.com/tpope/vim-surround): adds text objects that
    allow you to easily change surrounding punctuation marks or tags. Use `cs'"`
-   to change surrounding single quotes to double quotes, for example.
- * [NERDTree](https://github.com/scrooloose/nerdtree): allows you to open a
-   sidebar that shows a list of the files in your current directory.  
+   to change surrounding single quotes to double quotes, for example. 
+ * [NERDTree](https://github.com/scrooloose/nerdtree): adds a sidebar for 
+   browsing the files in your current directory.   
