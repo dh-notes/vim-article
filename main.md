@@ -88,7 +88,7 @@ text precisely with your mouse.
 The small effect of modes and text awareness is the ease with which you can
 begin to memorize text manipulation shortcuts. Vim is ergonomically designed to
 keep your fingers at the keyboard, at home row, minimizing finger movement
-involved in chord-like progressions like `Ctrl-C` and `Ctrl-P` (the usual way
+involved in chord-like progressions like `Ctrl-C` and `Ctrl-V` (the usual way
 to copy and paste selections, for example). Because you don't need to use the
 mouse that much (or at all) when you are good at Vim and because the commands
 are compact, your wrists remain relatively still. You don't even have to use
