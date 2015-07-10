@@ -47,50 +47,49 @@ Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff in the
 [Programming
 Historian](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
 
-Vim is further synonymous with **modal editing**. For someone coming from
-mode-less text editing (Open Office, Microsoft Word, and pretty much every
-other text box) modes, from all of Vim's special features, will require the
-most cognitive adjustment. That adjustment comes quickly. Within a few hours of
-practicing, modes will become completely natural.
+Vim is further synonymous with **modal editing**. Modes will require the most
+cognitive adjustment for someone coming from mode-less text editing (Open
+Office, Microsoft Word, or Gmail, for example). The idea behind modal editing
+is simple. The process of writing consists of several distinct kinds of
+operations, chief among them typing and manipulating text. In most editors,
+those two things happen in the same "place" if you will. Vim organizes actions
+related to typing and actions related to text manipulation into separate modes.
+You type in what is called the "insert mode," which functions pretty much as
+you would expect from using tools like Microsoft Word or Gmail. A whole new
+series of powerful text manipulation tools becomes available to the writer in
+"normal mode." Think of it as lifting the pen from paper to pick up other tools
+like scissors and an eraser. In the normal mode, you can use your keyboard for
+editing text instead of typing. We will go over the commands in detail later.
+For now, you can start Vim (gVim or NeoVim) and press `i` to enter the *insert
+mode* (see bottom left of your screen).  Type a few dummy sentences then press
+`Esc` to exit into the *normal mode* again. As you get better at Vim you will
+spend more and more of your time in the *normal mode*. To quit Vim, type `:q`.
+Incidentally, the colon takes you to the "command mode." Here you can issue
+written commands to the editor, like `:w` to save or to "write" the file and
+`:q` to quit.
 
-The idea behind modal editing is simple. The process of writing consists of
-several distinct kinds of operations, chief among them typing and manipulating
-text. In most editors, those two things happen in the same "place" if you will.
-Vim separates typing from text manipulation into different modes. You type in
-what's called the "insert mode," which functions pretty much as you would
-expect. A whole new series of powerful text manipulation tools becomes
-available to the writer in "normal mode." Think of it as lifting the pen from
-paper to pick up other tools like scissors and an eraser. In the normal mode,
-you can use your keyboard for editing text instead of typing. We will go over
-the commands in detail later. For now, you can start Vim (gVim or NeoVim) and
-press `i` to enter *insert mode* (see bottom left of your screen). Type a few
-dummy sentences then press `Escape` to exit into *normal mode* again. As you
-get better at Vim you will spend more and more of your time in *normal mode*.
-To quit Vim, type `:q`.  Incidentally, the colon takes you to the "control
-mode." Here you can issue written commands to the editor: like `:w` for write
-and `:q` for quit.
-
-The best thing about the *normal mode*, and the reason Vim is a fitting tool
-for academic writing, is that it is **text aware**. Text awareness means that
-the editor intrinsically "understands" semantic humanly-meaningful units like
-characters, words, sentences, and paragraphs. Say for example you want to
+Text awareness and composability of commands are some of the implemented ideas
+that make Vim such a powerful tool for academic writing. Text awareness means
+that the editor intrinsically "understands" humanly-meaningful semantic units
+like characters, words, sentences, and paragraphs. Say for example you want to
 delete a word in your regular text editor. Pay attention to your exact
 keystrokes. It is likely that you would either just backspace a few times until
 the word is gone or use the mouse to select the word to be deleted. This
 approach is slow and imprecise, because it treats text either as a sequence of
 individual characters or as a configuration of geometric shapes on the screen.
-You can still edit in that way in Vim's *insert mode* (`i`). But exit to
-*normal mode* (by pressing escape) and you are now able to delete the word
-under your cursor by typing `daw`.  The keys `daw` stand for "delete a word."
-Here's where things get neat. What do you think `d3w` does? The incantation
-stands for "delete three words." What about `das`?  In *normal mode*, the
-incantation `das` stands for "delete a sentence." In either case, the delete
-command will delete around your cursor position. Press `u` a few in normal mode
-to undo. `daw` and `das` delete the current word and the current sentence,
-respectively, even when your cursor is located mid-word or mid-sentence.
-Likewise, `ci)`, which  stands for "change inside parentheses," will allow you
-to replace all the text that appears between parentheses, without requiring you
-to select that text precisely with your mouse.
+You can still edit in that way in Vim's *insert mode* (`i`). But exit to the
+*normal mode* (by pressing `Esc`) and you are now able to delete the word under
+your cursor by typing `daw`. The keys `daw` stand for "delete a word." Here's
+where things get neat.  What do you think `d3w` does? As one would intuitively
+expect, `d3w` stands for "delete three words." What about `das`?  In *normal
+mode*, the incantation `das` stands for "delete a sentence." In either case,
+the delete command will delete around your cursor position. Press `u` a few
+times in *normal mode* to undo.  The incantations `daw` and `das` delete the
+current word and the current sentence, respectively, even when your cursor is
+located mid-word or mid-sentence.  Likewise, `dap` will delete the current
+paragraph while something like  `ci)` will "change inside parentheses,"
+allowing the author to replace rather than simply delte words. Try
+experimenting with incantations like `d2s` or `cap` to see what happens.
 
 The small effect of modes and text awareness is the ease with which you can
 begin to memorize text manipulation shortcuts. Vim is ergonomically designed to
