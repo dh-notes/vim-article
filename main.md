@@ -135,8 +135,6 @@ It is not our intention to supplant the many excellent tutorials on how to get
 started with Vim, but here is a sampling of Vim commands that may stimulate
 your curiosity.  
 
-Modes:
-
 Modifiers (adverbs): 
 
  * `8`: "perform the next command 8 times"  
@@ -156,17 +154,18 @@ Movements (prepositional phrases)
  * `$`: "until the end of the current line" 
  * `%`: "until reaching the matching bracket, parenthesis, or other character" 
 
-Several common commands composed from these words: 
+Several example commands composed from these "words": 
 
  * `dt,` "delete until the comma" 
  * `di"` "delete inside the quotation marks"  
- * `8.` "run the last command another 8 times" 
+ * `8.` "run the last command 8 more times" 
  * `y%` "copy (yank) all text until the matching bracket or parenthesis" 
 
-To learn more, you can run the tutorial program `vimtutor`. If you use Linux or
-MacOS, you already have this program installed, so it's as easy as opening a
-terminal and typing `vimtutor`. The program takes about 25 minutes to complete.
-There are also lots of great tutorials online, including the adventure game
+To learn more, run the tutorial program `vimtutor`. If you use Linux or MacOS,
+you already have this program installed, so it's as easy as opening a terminal
+and typing `vimtutor`. The program takes about 25 minutes to complete, and will
+familiarize you with all the basics of editing with Vim.  There are also lots
+of great tutorials online, including the adventure game
 [Vim Adventures](http://vim-adventures.com/). 
 
 ## Vim for Prose
@@ -206,20 +205,19 @@ returned over seven thousand examples.
 
 ## Common Addons
 
-There are thousands of plugins that have been written to extend and improve
-Vim's already rich functionality. Plugins can be installed manually, by
-dropping the files in a `.vim` folder, or by using a plugin manager like
-[Vundle](https://github.com/gmarik/Vundle.vim). Here are a few that could be
-useful to writing prose:  
+There are hundreds, if not thousands of plugins that have been written to
+extend and improve Vim's already rich functionality. Plugins can be installed
+manually, by dropping the files in a `.vim` folder, or by using a plugin
+manager like [Vundle](https://github.com/gmarik/Vundle.vim). Here are a few
+that are useful for writing prose:  
 
- * [vim-pencil](https://github.com/reedes/vim-pencil): adds configurations that
-   make vim better for prose writing.  
- * [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free
-   writing mode
- * [vim-surround](https://github.com/tpope/vim-surround): adds text objects
-   that allow you to easily change surrounding punctuation marks or tags. Use
-   `cs'"` to change surrounding single quotes to double quotes, for example. 
- * [NERDTree](https://github.com/scrooloose/nerdtree): adds a sidebar for
+ * [vim-pencil](https://github.com/reedes/vim-pencil): adds configurations that make Vim
+   better for prose writing.  
+ * [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free writing mode
+ * [vim-surround](https://github.com/tpope/vim-surround): adds text objects that
+   allow you to easily change surrounding punctuation marks or tags. Use `cs'"`
+   to change surrounding single quotes to double quotes, for example. 
+ * [NERDTree](https://github.com/scrooloose/nerdtree): adds a sidebar for 
    browsing the files in your current directory.   
 
 To find more, look through the directory [Vim Awesome](http://vimawesome.com/),
