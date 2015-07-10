@@ -3,19 +3,20 @@ title: "Vim: Text Editor for the Humanities"
 authors:
  - Dennis Tenen
  - Jonathan Reeve
+
 ---
 
 The first thing to note about Vim is that it is not merely an editor or a
 family of editors sharing a common software pedigree (Ed, Vi, Vim, GVim,
-NeoVim). Vim is also a philosophy of editing text--a way of doing things that
+NeoVim). Vim is also a philosophy of editing text---a way of doing things that
 could be (and often is) implemented in various contexts. For this reason, it is
 not our intention to start another text editor war. Vim-like modes are commonly
-implemented in many modern text editors like Emacs and Sublime. It is also
-possible to implement distinct ideas from Vim into other programs. There are
-several plugins that offer Vim shortcuts for the browser, for example. Our plan
-then is to talk about Vim as both an idea and a piece of software. Because
-switching to Vim is not a trivial endeavor, we want you to understand the
-stakes and the mind shift made possible by this elegant interface with the
+implemented in many modern text editors like Emacs, Atom, and Sublime. It is
+also possible to implement distinct ideas from Vim into other programs. There
+are several plugins that offer Vim shortcuts for the browser, for example. Our
+plan then is to talk about Vim as both an idea and a piece of software. Because
+switching to Vim is not a trivial endeavor, we want the reader to understand
+the stakes and the mind shift made possible by this elegant interface with the
 word. We will begin then with the philosophy behind Vim editing and end with
 the instrumental details of Vim as an editor.
 
