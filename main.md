@@ -71,8 +71,8 @@ mode." Here you can issue written commands to the editor: like `:w` for write
 and `:q` for quit.
 
 The best thing about the *normal mode*, and the reason Vim is a fitting tool
-for the humanities, is that it is **text aware**. Text awareness means that the
-editor intrinsically "understands" semantic humanly-meaningful units like
+for academic writing, is that it is **text aware**. Text awareness means that
+the editor intrinsically "understands" semantic humanly-meaningful units like
 characters, words, sentences, and paragraphs. Say for example you want to
 delete a word in your regular text editor. Pay attention to your exact
 keystrokes. It is likely that you would either just backspace a few times until
@@ -123,7 +123,7 @@ ideas about how writing and text editing should work, Vim gives you complete
 control over all expects of word manipulation. For those not interested in
 programming, hundreds if not thousands of modules are available, tailoring Vim
 to individual needs and workflows. (We will cover the most common ones,
-relevant to the humanities at the end of the article.)
+relevant to academic writing at the end of the article.)
 
 To summarize, Vim philosophy is a set of related concepts that start with plain
 text and lead to modal editing, text awareness, command composability, and,
