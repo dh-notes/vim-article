@@ -1,5 +1,5 @@
 ---
-title: "Vim: Text Editor for the Humanities"
+title: "An Introduction to Modal Text Editing with Vim"
 authors:
  - Dennis Tenen
  - Jonathan Reeve
