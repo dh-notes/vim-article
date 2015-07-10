@@ -18,7 +18,7 @@ plan then is to talk about Vim as both an idea and a piece of software. Because
 switching to Vim is not a trivial endeavor, we want the reader to understand
 the stakes and the mind shift made possible by this elegant interface with the
 word. We will begin then with the philosophy behind Vim editing and end with
-the instrumental details of Vim as an editor.
+some instrumental details of Vim as an editor.
 
 ## Key Concepts
 
@@ -28,63 +28,69 @@ and others) we will try to capture the spirit of the endeavor as we see it.
 
 Let's start with the most obvious one: Vim is a **plain text** editor. That
 means that you will use other tools to format and to set your text into print.
-In Vim, text is just text--there are no italics or fancy fonts to speak of. We
+In Vim, text is just text---there are no italics or fancy fonts to speak of. We
 use Markdown and Pandoc to format our texts and to generate files in Microsoft
 Word, Open Office, Adobe Acrobat, and HTML formats. If that sounds limiting, it
-is, on purpose! The general Unix philosophy towards developing software is "do
-one thing and do it well." Rather than being mediocre at many things related to
+is, on purpose! The Unix philosophy of software development values "doing one
+thing and doing it well." Rather than being mediocre at many things related to
 word processing, Vim does one thing exceedingly well. Along with Emacs and a
 few other candidates for the title, it is the most advanced *text editor*
-available. There are other excellent, professional-grade tools created for the
-typesetting and the formatting of text.[^ln-plain]
+available. Other complimentary and powerful tools can fill the role of
+typesetting and formatting of text.[^ln-plain] Our goal then is to assemble a
+"tool chain" or a "stack" of programs that answer to the requirements of
+academic writing. Vim will serve as the first and the foundational building
+block in assembling that stack.
 
 [^ln-plain]: On what these tools are and on the why it is good for our
 community to work in plain text file formats, read "Sustainable Authorship in
-Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff
-in the [Programming
+Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff in the
+[Programming
 Historian](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
 
 Vim is further synonymous with **modal editing**. For someone coming from
 mode-less text editing (Open Office, Microsoft Word, and pretty much every
 other text box) modes, from all of Vim's special features, will require the
 most cognitive adjustment. That adjustment comes quickly. Within a few hours of
-practicing, modes will become completely natural. But be forewarned, that once
-you unlock the power of modal editing, it will also forever mar all other ways
-of interacting with text. You will want it everywhere: in your email and in
-your to-do list.
+practicing, modes will become completely natural.
 
 The idea behind modal editing is simple. The process of writing consists of
 several distinct kinds of operations, chief among them typing and manipulating
 text. In most editors, those two things happen in the same "place" if you will.
 Vim separates typing from text manipulation into different modes. You type in
-what's called "Insert mode," which functions pretty much as you would expect.
-But in "Normal mode" a whole new series of powerful text manipulation tools
-becomes available to the writer. And because you are no longer typing, you can
-use your keyboard for editing text. We will go over the commands in detail
-later. For now, you can start Vim (gVim or NeoVim) and press `i` to enter
-Insert mode (see bottom left of your screen). Press `Escape` to exit into
-Normal mode again. As you get better at Vim you will spend more and more of
-your time in Normal mode. To quit Vim, type `:q`.  
+what's called the "insert mode," which functions pretty much as you would
+expect. A whole new series of powerful text manipulation tools becomes
+available to the writer in "normal mode." Think of it as lifting the pen from
+paper to pick up other tools like scissors and an eraser. In the normal mode,
+you can use your keyboard for editing text instead of typing. We will go over
+the commands in detail later. For now, you can start Vim (gVim or NeoVim) and
+press `i` to enter *insert mode* (see bottom left of your screen). Type a few
+dummy sentences then press `Escape` to exit into *normal mode* again. As you
+get better at Vim you will spend more and more of your time in *normal mode*.
+To quit Vim, type `:q`.  Incidentally, the colon takes you to the "control
+mode." Here you can issue written commands to the editor: like `:w` for write
+and `:q` for quit.
 
-The best thing about Normal mode, and the reason Vim is a fitting tool for the
-humanities, is that it is **text aware**. Text awareness means that the editor
-intrinsically "understands" semantic humanly-meaningful units like characters,
-words, sentences, and paragraphs. Say for example you want to delete a word in
-your regular text editor. Pay attention to your exact keystrokes. It is likely
-that you would either just backspace a few times until the word is gone or use
-the mouse to select the word to be deleted. This approach is frequently
-imprecise, because it is editing on the level of the character, rather than
-semantic units. You can try doing the same in Vim's Insert mode. But exit to
-Normal mode and you are now able to delete the word under your cursor by typing
-`daw`. The keys `daw` stand for "delete a word." Here's where things get neat.
-What do you think `d3w` does? This stands for "delete three words." What about
-`das`?  In Normal mode, the incantation `das` stands for "delete a sentence."
-In either case, the delete command will delete around your cursor position.
-`daw` and `das` delete the current word and the current sentence, respectively,
-even when your cursor is located mid-word or mid-sentence. Likewise, `ci)`,
-which  stands for "change inside parentheses," will allow you to replace all
-the text that appears between parentheses, without requiring you to select that
-text precisely with your mouse.
+The best thing about the *normal mode*, and the reason Vim is a fitting tool
+for the humanities, is that it is **text aware**. Text awareness means that the
+editor intrinsically "understands" semantic humanly-meaningful units like
+characters, words, sentences, and paragraphs. Say for example you want to
+delete a word in your regular text editor. Pay attention to your exact
+keystrokes. It is likely that you would either just backspace a few times until
+the word is gone or use the mouse to select the word to be deleted. This
+approach is slow and imprecise, because it treats text either as a sequence of
+individual characters or as a configuration of geometric shapes on the screen.
+You can still edit in that way in Vim's *insert mode* (`i`). But exit to
+*normal mode* (by pressing escape) and you are now able to delete the word
+under your cursor by typing `daw`.  The keys `daw` stand for "delete a word."
+Here's where things get neat. What do you think `d3w` does? The incantation
+stands for "delete three words." What about `das`?  In *normal mode*, the
+incantation `das` stands for "delete a sentence." In either case, the delete
+command will delete around your cursor position. Press `u` a few in normal mode
+to undo. `daw` and `das` delete the current word and the current sentence,
+respectively, even when your cursor is located mid-word or mid-sentence.
+Likewise, `ci)`, which  stands for "change inside parentheses," will allow you
+to replace all the text that appears between parentheses, without requiring you
+to select that text precisely with your mouse.
 
 The small effect of modes and text awareness is the ease with which you can
 begin to memorize text manipulation shortcuts. Vim is ergonomically designed to
