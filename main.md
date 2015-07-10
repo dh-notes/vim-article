@@ -152,9 +152,9 @@ Text Objects (nouns):
  * `ip`: "inside this paragraph" 
 
 Movements (prepositional phrases)
- * `tX`: "until finding character X" 
+ * `tX`: "until reaching the character X" 
  * `$`: "until the end of the current line" 
- * `%`: "until finding the matching bracket, parenthesis, or other entity" 
+ * `%`: "until reaching the matching bracket, parenthesis, or other character" 
 
 Several common commands composed from these words: 
 
@@ -200,6 +200,10 @@ map j gj
 map k gk
 ```
 
+For more useful settings, take a look at some of the `.vimrc`s that other 
+Vim users have posted to GitHub. [A recent GitHub search for 'vimrc'](https://github.com/search?utf8=✓&q=vimrc) 
+returned over seven thousand examples. 
+
 ## Common Addons
 
 There are thousands of plugins that have been written to extend and improve
@@ -208,11 +212,15 @@ dropping the files in a `.vim` folder, or by using a plugin manager like
 [Vundle](https://github.com/gmarik/Vundle.vim). Here are a few that could be
 useful to writing prose:  
 
- * [vim-pencil](https://github.com/reedes/vim-pencil): adds configurations that make vim
-   better for prose writing.  
- * [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free writing mode
- * [vim-surround](https://github.com/tpope/vim-surround): adds text objects that
-   allow you to easily change surrounding punctuation marks or tags. Use `cs'"`
-   to change surrounding single quotes to double quotes, for example. 
- * [NERDTree](https://github.com/scrooloose/nerdtree): adds a sidebar for 
+ * [vim-pencil](https://github.com/reedes/vim-pencil): adds configurations that
+   make vim better for prose writing.  
+ * [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free
+   writing mode
+ * [vim-surround](https://github.com/tpope/vim-surround): adds text objects
+   that allow you to easily change surrounding punctuation marks or tags. Use
+   `cs'"` to change surrounding single quotes to double quotes, for example. 
+ * [NERDTree](https://github.com/scrooloose/nerdtree): adds a sidebar for
    browsing the files in your current directory.   
+
+To find more, look through the directory [Vim Awesome](http://vimawesome.com/),
+which has a list of plugins, sorted by popularity. 
