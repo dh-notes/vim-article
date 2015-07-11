@@ -248,12 +248,15 @@ setlocal formatoptions=l
 " horizontally.
 set wrap
 
+
 " Break lines on words, instead of characters, which looks better for prose. 
 set linebreak
 
 " Use `j` and `k` to move within wrapped lines, in addition to ordinary lines. 
 map j gj
 map k gk
+
+
 ```
 
 Note the use of double quotes for comments, which are ignored on startup. For
@@ -266,22 +269,37 @@ uniquely yours. We recommend that you do not add any lines there that you don't
 understand. A good `.vimrc` configuration file will be well annotated by the
 owner.
 
-## Common Addons
+## Spell Checking
+
+Jonathan. Add instructions for adding a spell check shortcut to .vimrc and
+follow http://vimdoc.sourceforge.net/htmldoc/spell.html to glean the most
+useful shortcuts. Use the table format as above for common tasks.
+
+## Copy and Paste from Outside of Vim
+
+This is a common complaint. Cover it here.
+
+```
+set clipboard=unnamedplus       " Better copy & paste, needs v. 7.3.74+
+```
+
+## Common Plugins
 
 There are hundreds, if not thousands of plugins that have been written to
 extend and improve Vim's already rich functionality. Plugins can be installed
 manually, by dropping the files in a `.vim` folder, or by using a plugin
 manager like [Vundle](https://github.com/gmarik/Vundle.vim). Here are a few
-that are useful for writing prose:  
+that are useful for writing prose:
 
- * [vim-pencil](https://github.com/reedes/vim-pencil): adds configurations that make Vim
-   better for prose writing.  
- * [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free writing mode
- * [vim-surround](https://github.com/tpope/vim-surround): adds text objects that
-   allow you to easily change surrounding punctuation marks or tags. Use `cs'"`
-   to change surrounding single quotes to double quotes, for example. 
- * [NERDTree](https://github.com/scrooloose/nerdtree): adds a sidebar for 
-   browsing the files in your current directory.   
+* [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free writing mode
+* [online-thesaurus](https://github.com/beloglazov/vim-online-thesaurus)
+* [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc)
 
 To find more, look through the directory [Vim Awesome](http://vimawesome.com/),
-which has a list of plugins, sorted by popularity. 
+which has a list of plugins, sorted by popularity. Although it is tempting to
+jump into the world of Vim plugins right away, the common wisdom suggests
+deferring until intermediate to advanced proficiency is reached. The writers
+found it useful to tackle one customization at a time. Vim is a remarkably
+flexible and deep tool that can grow with the user's expertise. It is free and
+open source, which means that with enough users, we further tailor it to the
+needs of our academic community.
