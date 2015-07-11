@@ -88,25 +88,25 @@ times in *normal mode* to undo.  The incantations `daw` and `das` delete the
 current word and the current sentence, respectively, even when your cursor is
 located mid-word or mid-sentence.  Likewise, `dap` will delete the current
 paragraph while something like  `ci)` will "change inside parentheses,"
-allowing the author to replace rather than simply delte words. Try
+allowing the author to replace rather than simply delete words. Try
 experimenting with incantations like `d2s` or `cap` to see what happens.
 
-The small effect of modes and text awareness is the ease with which you can
-begin to memorize text manipulation shortcuts. Vim is ergonomically designed to
-keep your fingers at the keyboard, at home row, minimizing finger movement
-involved in chord-like progressions like `Ctrl-C` and `Ctrl-V` (the usual way
-to copy and paste selections, for example). Because you don't need to use the
-mouse that much (or at all) when you are good at Vim and because the commands
-are compact, your wrists remain relatively still. You don't even have to use
-the arrow keys, since Vim has reproduced these at the home keys `hjkl`.  Many
-writers report reduced hand strain. But these are small luxuries. The big
-payoff of modes and text awareness is **command composability.** In some
-important sense, Vim is a language for interacting with language. "Delete a
-word" has a grammatical structure: a verb and a noun. Once you become fluent in
-this language, you will be able to compose commands "on the fly," without
-thinking or looking things up. A measure of flow and fluency becomes possible,
-elevating mere editing into handcraft. As literary scholars we are biased
-towards tools that understand language on its own terms.
+Vim is ergonomically designed to keep your fingers at the keyboard, at home
+row, minimizing finger movement involved in chord-like progressions like
+`Ctrl-C` and `Ctrl-V` (the usual way to copy and paste selections, for
+example). Instead of the arrow keys or the mouse, vimmers use `hjkl` for
+navigation. With time you can start using sentence-based navigation with `(`
+and `)`, or move around by paragraph with `[` and `]`. To move to the end of
+the line press `$`. To move to the beginning, try `0`. Remember to evoke these
+form the *normal mode*. Because you don't need to use the mouse that much (or
+at all) when you are good at Vim and because the commands are compact, your
+wrists remain relatively still. Many writers report reduced hand strain. But
+these are small luxuries. The big payoff of modes and text awareness is
+**command composability.** In some important sense, Vim is a language for
+interacting with language. "Delete a word" has a grammatical structure: a verb
+and a noun. Once you become fluent in this language, you will be able to
+compose commands "on the fly," without thinking or looking things up. A measure
+of flow and fluency becomes possible, elevating mere editing into handcraft.
 
 As with any language, the road to fluency is not short. But compared to a
 foreign language, Vim makes use of a small, controlled vocabulary. It is quick
@@ -124,55 +124,102 @@ programming, hundreds if not thousands of modules are available, tailoring Vim
 to individual needs and workflows. (We will cover the most common ones,
 relevant to academic writing at the end of the article.)
 
-To summarize, Vim philosophy is a set of related concepts that start with plain
-text and lead to modal editing, text awareness, command composability, and,
-finally, a language for building your own customized text editing software. Any
-of these ideas could be implemented independently of Vim. Vim just happens to
-implement all of them in one small package, installed on most of the world's
-computers (except for Windows) by default since the 1970s, available for free,
-and in open-source, making further modification possible. We want more
-humanists to use Vim because we want our community to build better interfaces
-with the word. The editor is at the center of everything that we do and we need
-to take ownership of material contexts of knowledge production.
+To summarize, Vim's philosophy is a set of related concepts that start with
+plain text and lead to modal editing, text awareness, command composability,
+and, finally, a language for building your own customized text editing
+software. Any of these ideas could be implemented independently of Vim. Vim
+just happens to implement all of them in one small package, installed on most
+of the world's computers (except for Windows) by default since the 1970s,
+available for free, and in open-source, making further modification possible.
+We want our colleagues to use Vim because we want our community to build better
+interfaces with the word. The text editor provides the foundations of all
+scholarly activity. It is therefore paramount that we develop mastery over and
+take ownership of the tool (and not the other way around).
 
 ## Getting Started with Vim
 
 It is not our intention to supplant the many excellent tutorials on how to get
 started with Vim, but here is a sampling of Vim commands that may stimulate
-your curiosity.  
+your curiosity. Think of the commands as having a grammer that usually begins
+with a verb and ends with a noun, with an adverb or an adjective inbetween. Use
+the built-in docomenation by evoking `:help [command]`. Some of the common
+verbs available to you include:
 
-Modifiers (adverbs): 
+<figure><figcaption>Vim verbs<figcaption></figure>
 
- * `8`: "perform the next command 8 times"  
+| command   | meaning               | default scope  | try          |
+|-----------|-----------------------|----------------|--------------|
+| `d`       | delete                | explicit       | `d7w`, `das` |
+| `r`       | replace               | character      | `r0`, `4r0`  |
+| `y`       | copy or yank          | explicit       | `yy`         |
+| `p`       | paste or put          | once           | `7p`         |
+| `a`       | append                | after cursor   |              |
+| `A`       | append                | end of line    |              |
+| `g`       | go                    | explicit
+| `u`       | undo                  | change stack
+| `Ctrl-r`  | redo                  | undo stack
+| `.`       | repeat                | last action
+| `>`, `<`  | shift right, left     |
+| `/`       | search forward
+| `o`, `O`  | new line below, above
 
-Commands (verbs):
- 
- * `d`: "delete" 
- * `y`: copy, or "yank"
+Some verbs require explicit scoping. For example, delete or `d` by itself does
+nothing until you specify what to delete.
 
-Text Objects (nouns):
- 
- * `as`: "a sentence" 
- * `ip`: "inside this paragraph" 
+<figure><figcaption>Text objects<figcaption></figure>
 
-Movements (prepositional phrases)
- * `tX`: "until reaching the character X" 
- * `$`: "until the end of the current line" 
- * `%`: "until reaching the matching bracket, parenthesis, or other character" 
+| command | meaning    | scope                     | examples     |
+|---------|------------|---------------------------|--------------|
+| `aw`    | a word     | a sequence of letters     |  cat         |
+| `aW`    | a WORD     | a sequence of characters  |  dog56-72    |
+| `s`     | sentence   | punctuation               |  A bird?     |
+| `p`     | paragraph  | blank lines               |              |
 
-Several example commands composed from these "words": 
+Evoke `:help text-object` to learn more about text objects. The best way to
+understand text and motions objects (coming up next) is just to try using them
+with *delete* (`d`), *yank* (`y`) and *put* (`p`). Next come the motion
+commands, which like text objects give you a quick way to compose evocations
+like "delete the line above" and "move to the next parentheses."
 
- * `dt,` "delete until the comma" 
- * `di"` "delete inside the quotation marks"  
- * `8.` "run the last command 8 more times" 
- * `y%` "copy (yank) all text until the matching bracket or parenthesis" 
+<figure><figcaption>Motion commands<figcaption></figure>
+
+| command  | meaning                           |  try          |
+|----------|-----------------------------------|---------------|
+| `k`, `j` | up, down                          | `7k`          |
+| `h`, `l` | left, right                       | `3l`          |
+| `t`, `i` | until, inside                     | `dt,` `di"`   |
+| `w`, `b` | word forward, word backward
+| `$`, `0` |
+| `)`, `(` |
+| `gg`, `G`| beginning and end of document
+| `n`, `N` | next, previous (used with `/`)
+
+Motion commands often take a number as an argument for how many times the
+motion should be repeated. Try this in your file: evoke `/the` to find all
+instances of the definite article. Then type `5n` to move to the fifth "the" in
+the document (assuming you have that many). Finally, it may be useful to review
+some of the major modes:
+
+| mode          | key        |  purpose                                        |
+|---------------|------------|-------------------------------------------------|
+| Normal        | `Esc`      | You should excape to normal mode always         |
+| Command       | `:`        | You can issue longer commands here like `:help` |
+| Insert        | `i`        | Your basic typing mode                          |
+| Visual        | `v`        | Select and operate on charachters               |
+| V-Line        | `Shift-V`  | Select and operate on lines                     |
+| V-Block       | `Ctrl-V`   | Select and operate on blocks                    |
+
+<figure><figcaption>Vim Modes<figcaption></figure>
 
 To learn more, run the tutorial program `vimtutor`. If you use Linux or MacOS,
 you already have this program installed, so it's as easy as opening a terminal
 and typing `vimtutor`. The program takes about 25 minutes to complete, and will
-familiarize you with all the basics of editing with Vim.  There are also lots
-of great tutorials online, including the adventure game
-[Vim Adventures](http://vim-adventures.com/). 
+familiarize you with all the basics of editing with Vim. There are also lots of
+great tutorials online, including the adventure game [Vim
+Adventures](http://vim-adventures.com/). Just like with any language, we
+suggest aspiring Vimmers master one Vim idiom at a time. Once you are fluent in
+basics, you can move on to advanced topics like buffers, folds, markers, search
+and replace, and file explore.
 
 ## Vim for Prose
 
@@ -183,18 +230,22 @@ section, we will conclude by suggesting a few "quality of life" improvements
 that go beyond basic functionality.
 
 Because Vim is a toolkit for building a better editor, we need to do some work
-to customize for writing prose. To do this, we can edit Vim's configuration
-file, `.vimrc`, and add a few settings. Here are a few common settings:
+to customize it for writing prose. To do this, we can edit Vim's configuration
+file, `.vimrc`, found in your home directory.[^ln-home] Here are
+a few common settings:
+
+[^ln-home]: You may need to enable "show hidden files" in the file explorer or
+finder of your choice.
 
 ```vimscript
 " This turns off backwards-compatibility with the `vi` editor, which we won't need. 
 set nocompatible
 
 " This tells Vim not to format long lines of prose as if they were code.
-setlocal formatoptions=l 
+setlocal formatoptions=l
 
 " Turn on word wrapping, to avoid typing really long lines that extend
-" horizontally.  
+" horizontally.
 set wrap
 
 " Break lines on words, instead of characters, which looks better for prose. 
@@ -205,9 +256,15 @@ map j gj
 map k gk
 ```
 
-For more useful settings, take a look at some of the `.vimrc`s that other 
-Vim users have posted to GitHub. [A recent GitHub search for 'vimrc'](https://github.com/search?utf8=✓&q=vimrc) 
-returned over seven thousand examples. 
+Note the use of double quotes for comments, which are ignored on startup. For
+more useful settings, take a look at some of the `.vimrc`s that other Vim users
+have posted to GitHub. [A recent GitHub search for
+'vimrc'](https://github.com/search?utf8=✓&q=vimrc) returned over seven thousand
+examples. The authors' configuration files can be found here and here. Your
+`.vimrc` file will soon become your prized possession. It is what makes Vim
+uniquely yours. We recommend that you do not add any lines there that you don't
+understand. A good `.vimrc` configuration file will be well annotated by the
+owner.
 
 ## Common Addons
 
