@@ -269,13 +269,13 @@ uniquely yours. We recommend that you do not add any lines there that you don't
 understand. A good `.vimrc` configuration file will be well annotated by the
 owner.
 
-## Spell Checking
+### Spell Checking
 
 Jonathan. Add instructions for adding a spell check shortcut to .vimrc and
 follow http://vimdoc.sourceforge.net/htmldoc/spell.html to glean the most
 useful shortcuts. Use the table format as above for common tasks.
 
-## Copy and Paste from Outside of Vim
+### Copy and Paste from Outside of Vim
 
 This is a common complaint. Cover it here.
 
