@@ -145,7 +145,6 @@ with a verb and ends with a noun, with an adverb or an adjective in between. Use
 the built-in documentation by evoking `:help [command]`. Some of the common
 verbs available to you include:
 
-<figure><figcaption>Vim verbs<figcaption></figure>
 
 | command   | meaning               | default scope  | try          |
 |-----------|-----------------------|----------------|--------------|
@@ -163,10 +162,10 @@ verbs available to you include:
 | `/`       | search forward
 | `o`, `O`  | new line below, above
 
+: Vim Verbs 
+
 Some verbs require explicit scoping. For example, delete or `d` by itself does
 nothing until you specify what to delete.
-
-<figure><figcaption>Text objects<figcaption></figure>
 
 | command | meaning    | scope                     | examples     |
 |---------|------------|---------------------------|--------------|
@@ -175,13 +174,13 @@ nothing until you specify what to delete.
 | `s`     | sentence   | punctuation               |  A bird?     |
 | `p`     | paragraph  | blank lines               |              |
 
+: Text Objects
+
 Evoke `:help text-object` to learn more about text objects. The best way to
 understand text and motions objects (coming up next) is just to try using them
 with *delete* (`d`), *yank* (`y`) and *put* (`p`). Next come the motion
 commands, which like text objects give you a quick way to compose evocations
 like "delete the line above" and "move to the next parentheses."
-
-<figure><figcaption>Motion commands<figcaption></figure>
 
 | command  | meaning                                  |  try          |
 |----------|------------------------------------------|---------------|
@@ -193,6 +192,8 @@ like "delete the line above" and "move to the next parentheses."
 | `)`, `(` | beginning of the next, previous sentence | `d)`
 | `gg`, `G`| beginning and end of document            | `dG`
 | `n`, `N` | next, previous (used with `/`)          
+
+: Motion Commands
 
 Motion commands often take a number as an argument for how many times the
 motion should be repeated. Try this in your file: evoke `/the` to find all
@@ -209,7 +210,7 @@ some of the major modes:
 | V-Line        | `Shift-V`  | Select and operate on lines                     |
 | V-Block       | `Ctrl-V`   | Select and operate on blocks                    |
 
-<figure><figcaption>Vim Modes<figcaption></figure>
+:Vim Modes
 
 To learn more, run the tutorial program `vimtutor`. If you use Linux or MacOS,
 you already have this program installed, so it's as easy as opening a terminal
@@ -290,9 +291,9 @@ manually, by dropping the files in a `.vim` folder, or by using a plugin
 manager like [Vundle](https://github.com/gmarik/Vundle.vim). Here are a few
 that are useful for writing prose:
 
-* [goyo](https://github.com/junegunn/goyo.vim): adds a distraction-free writing mode
-* [online-thesaurus](https://github.com/beloglazov/vim-online-thesaurus)
-* [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc)
+* [goyo](https://github.com/junegunn/goyo.vim): a distraction-free writing mode
+* [online-thesaurus](https://github.com/beloglazov/vim-online-thesaurus): looks up the current word in an online thesaurus
+* [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): converts documents between many different formats, such as between vim-friendly markdown and Microsoft Word .docx
 
 To find more, look through the directory [Vim Awesome](http://vimawesome.com/),
 which has a list of plugins, sorted by popularity. Although it is tempting to
