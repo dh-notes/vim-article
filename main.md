@@ -43,7 +43,7 @@ block in assembling that stack.
 
 [^ln-plain]: On what these tools are and on the why it is good for our
 community to work in plain text file formats, read "Sustainable Authorship in
-Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff in the
+Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff in 
 [The Programming
 Historian](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
 
