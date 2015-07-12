@@ -58,10 +58,10 @@ You type in what is called the "insert mode," which functions pretty much as
 you would expect from using tools like Microsoft Word or Gmail. A whole new
 series of powerful text manipulation tools becomes available to the writer in
 "normal mode." Think of it as lifting the pen from paper to pick up other tools
-like scissors and an eraser. In the normal mode, you can use your keyboard for
+like scissors and an eraser. In the *normal mode*, you can use your keyboard for
 editing text instead of typing. We will go over the commands in detail later.
 For now, you can start Vim (gVim or NeoVim) and press `i` to enter the *insert
-mode* (see bottom left of your screen).  Type a few dummy sentences then press
+mode* (see bottom left of your screen). Type a few dummy sentences, then press
 `Esc` to exit into the *normal mode* again. As you get better at Vim you will
 spend more and more of your time in the *normal mode*. To quit Vim, type `:q`.
 Incidentally, the colon takes you to the "command mode." Here you can issue
@@ -74,7 +74,7 @@ that the editor intrinsically "understands" humanly-meaningful semantic units
 like characters, words, sentences, and paragraphs. Say for example you want to
 delete a word in your regular text editor. Pay attention to your exact
 keystrokes. It is likely that you would either just backspace a few times until
-the word is gone or use the mouse to select the word to be deleted. This
+the word is gone, or use the mouse to select the word to be deleted. This
 approach is slow and imprecise, because it treats text either as a sequence of
 individual characters or as a configuration of geometric shapes on the screen.
 You can still edit in that way in Vim's *insert mode* (`i`). But exit to the
@@ -84,14 +84,14 @@ where things get neat.  What do you think `d3w` does? As one would intuitively
 expect, `d3w` stands for "delete three words." What about `das`?  In *normal
 mode*, the incantation `das` stands for "delete a sentence." In either case,
 the delete command will delete around your cursor position. Press `u` a few
-times in *normal mode* to undo.  The incantations `daw` and `das` delete the
+times in *normal mode* to undo. The incantations `daw` and `das` delete the
 current word and the current sentence, respectively, even when your cursor is
-located mid-word or mid-sentence.  Likewise, `dap` will delete the current
-paragraph while something like  `ci)` will "change inside parentheses,"
+located mid-word or mid-sentence. Likewise, `dap` will delete the current
+paragraph, while something like `ci)` will "change inside parentheses,"
 allowing the author to replace rather than simply delete words. Try
 experimenting with incantations like `d2s` or `cap` to see what happens.
 
-Vim is ergonomically designed to keep your fingers at the keyboard, at home
+Vim is ergonomically designed to keep your fingers at the keyboard, at the home
 row, minimizing finger movement involved in chord-like progressions like
 `Ctrl-C` and `Ctrl-V` (the usual way to copy and paste selections, for
 example). Instead of the arrow keys or the mouse, vimmers use `hjkl` for
@@ -99,10 +99,10 @@ navigation. With time you can start using sentence-based navigation with `(`
 and `)`, or move around by paragraph with `[` and `]`. To move to the end of
 the line press `$`. To move to the beginning, try `0`. Remember to evoke these
 form the *normal mode*. Because you don't need to use the mouse that much (or
-at all) when you are good at Vim and because the commands are compact, your
+at all) when you are good at Vim, and because the commands are compact, your
 wrists remain relatively still. Many writers report reduced hand strain. But
 these are small luxuries. The big payoff of modes and text awareness is
-**command composability.** In some important sense, Vim is a language for
+**command composability**. In some important sense, Vim is a language for
 interacting with language. "Delete a word" has a grammatical structure: a verb
 and a noun. Once you become fluent in this language, you will be able to
 compose commands "on the fly," without thinking or looking things up. A measure
@@ -121,7 +121,7 @@ toolkit for building your own editor.** Where other editors have fairly rigid
 ideas about how writing and text editing should work, Vim gives you complete
 control over all expects of word manipulation. For those not interested in
 programming, hundreds if not thousands of modules are available, tailoring Vim
-to individual needs and workflows. (We will cover the most common ones,
+to individual needs and workflows. (We will cover the most common ones
 relevant to academic writing at the end of the article.)
 
 To summarize, Vim's philosophy is a set of related concepts that start with
@@ -140,9 +140,9 @@ take ownership of the tool (and not the other way around).
 
 It is not our intention to supplant the many excellent tutorials on how to get
 started with Vim, but here is a sampling of Vim commands that may stimulate
-your curiosity. Think of the commands as having a grammer that usually begins
-with a verb and ends with a noun, with an adverb or an adjective inbetween. Use
-the built-in docomenation by evoking `:help [command]`. Some of the common
+your curiosity. Think of the commands as having a grammar that usually begins
+with a verb and ends with a noun, with an adverb or an adjective in between. Use
+the built-in documentation by evoking `:help [command]`. Some of the common
 verbs available to you include:
 
 <figure><figcaption>Vim verbs<figcaption></figure>
@@ -202,10 +202,10 @@ some of the major modes:
 
 | mode          | key        |  purpose                                        |
 |---------------|------------|-------------------------------------------------|
-| Normal        | `Esc`      | You should excape to normal mode always         |
+| Normal        | `Esc`      | You should escape to normal mode always         |
 | Command       | `:`        | You can issue longer commands here like `:help` |
 | Insert        | `i`        | Your basic typing mode                          |
-| Visual        | `v`        | Select and operate on charachters               |
+| Visual        | `v`        | Select and operate on characters               |
 | V-Line        | `Shift-V`  | Select and operate on lines                     |
 | V-Block       | `Ctrl-V`   | Select and operate on blocks                    |
 
@@ -219,7 +219,7 @@ great tutorials online, including the adventure game [Vim
 Adventures](http://vim-adventures.com/). Just like with any language, we
 suggest aspiring Vimmers master one Vim idiom at a time. Once you are fluent in
 basics, you can move on to advanced topics like buffers, folds, markers, search
-and replace, and file explore.
+and replace, and file exploration.
 
 ## Vim for Prose
 
@@ -248,24 +248,23 @@ setlocal formatoptions=l
 " horizontally.
 set wrap
 
-
 " Break lines on words, instead of characters, which looks better for prose. 
 set linebreak
 
 " Use `j` and `k` to move within wrapped lines, in addition to ordinary lines. 
 map j gj
 map k gk
-
-
 ```
 
 Note the use of double quotes for comments, which are ignored on startup. For
 more useful settings, take a look at some of the `.vimrc`s that other Vim users
 have posted to GitHub. [A recent GitHub search for
 'vimrc'](https://github.com/search?utf8=✓&q=vimrc) returned over seven thousand
-examples. The authors' configuration files can be found here and here. Your
-`.vimrc` file will soon become your prized possession. It is what makes Vim
-uniquely yours. We recommend that you do not add any lines there that you don't
+examples. The authors' configuration files can be found
+[here](https://github.com/JonathanReeve/dotfiles) and
+[here](https://github.com/denten/.dotfiles). Your `.vimrc` file will soon
+become your prized possession. It is what makes Vim uniquely yours. We
+recommend that you do not add any lines there that you don't
 understand. A good `.vimrc` configuration file will be well annotated by the
 owner.
 
@@ -280,7 +279,7 @@ useful shortcuts. Use the table format as above for common tasks.
 This is a common complaint. Cover it here.
 
 ```
-set clipboard=unnamedplus       " Better copy & paste, needs v. 7.3.74+
+set clipboard=unnamedplus       " Better copy & paste, needs a vim version newer than 7.3.74. 
 ```
 
 ## Common Plugins
