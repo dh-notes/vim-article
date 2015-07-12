@@ -206,7 +206,7 @@ some of the major modes:
 | Normal        | `Esc`      | You should escape to normal mode always         |
 | Command       | `:`        | You can issue longer commands here like `:help` |
 | Insert        | `i`        | Your basic typing mode                          |
-| Visual        | `v`        | Select and operate on characters               |
+| Visual        | `v`        | Select and operate on characters                |
 | V-Line        | `Shift-V`  | Select and operate on lines                     |
 | V-Block       | `Ctrl-V`   | Select and operate on blocks                    |
 
@@ -270,6 +270,10 @@ understand. A good `.vimrc` configuration file will be well annotated by the
 owner.
 
 ### Spell Checking
+
+Vim has a built in spell-checking mode that you can activate by evoking `:set spell`. Since this is a long command to type, we can create a shorcut for it by adding this to our .vimrc: 
+
+   map <F6> :set spell<CR>
 
 Jonathan. Add instructions for adding a spell check shortcut to .vimrc and
 follow http://vimdoc.sourceforge.net/htmldoc/spell.html to glean the most
