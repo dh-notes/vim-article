@@ -183,16 +183,16 @@ like "delete the line above" and "move to the next parentheses."
 
 <figure><figcaption>Motion commands<figcaption></figure>
 
-| command  | meaning                           |  try          |
-|----------|-----------------------------------|---------------|
-| `k`, `j` | up, down                          | `7k`          |
-| `h`, `l` | left, right                       | `3l`          |
-| `t`, `i` | until, inside                     | `dt,` `di"`   |
-| `w`, `b` | word forward, word backward
-| `$`, `0` |
-| `)`, `(` |
-| `gg`, `G`| beginning and end of document
-| `n`, `N` | next, previous (used with `/`)
+| command  | meaning                                  |  try          |
+|----------|------------------------------------------|---------------|
+| `k`, `j` | up, down                                 | `7k`          |
+| `h`, `l` | left, right                              | `3l`          |
+| `t`, `i` | until, inside                            | `dt`, `di"`   |
+| `w`, `b` | word forward, word backward              | `y3w`, `9b`   |  
+| `$`, `0` | until the end, beginning of line         | `y$`
+| `)`, `(` | beginning of the next, previous sentence | `d)`
+| `gg`, `G`| beginning and end of document            | `dG`
+| `n`, `N` | next, previous (used with `/`)          
 
 Motion commands often take a number as an argument for how many times the
 motion should be repeated. Try this in your file: evoke `/the` to find all
