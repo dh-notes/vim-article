@@ -43,8 +43,8 @@ block in assembling that stack.
 
 [^ln-plain]: On what these tools are and on the why it is good for our
 community to work in plain text file formats, read "Sustainable Authorship in
-Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff in 
-[The Programming
+Plain Text using Pandoc and Markdown" By Dennis Tenen and Grant Wythoff in [The
+Programming
 Historian](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
 
 Vim is further synonymous with **modal editing**. Modes will require the most
@@ -155,11 +155,11 @@ verbs available to you include:
 | `a`       | append                | after cursor   |              |
 | `A`       | append                | end of line    |              |
 | `g`       | go                    | explicit
-| `u`       | undo                  | change stack
+| `u`       | undo                  | change stack    
 | `Ctrl-r`  | redo                  | undo stack
 | `.`       | repeat                | last action
-| `>`, `<`  | shift right, left     |
-| `/`       | search forward
+| `>`, `<`  | shift right, left     | current line   | `3>>`
+| `/`       | search forward       
 | `o`, `O`  | new line below, above
 
 : Vim Verbs 
@@ -232,8 +232,9 @@ that go beyond basic functionality.
 
 Because Vim is a toolkit for building a better editor, we need to do some work
 to customize it for writing prose. To do this, we can edit Vim's configuration
-file, `.vimrc`, found in your home directory.[^ln-home] Here are
-a few common settings:
+file, `.vimrc`, found in your home directory. You can edit it in vim by typing
+`vim ~/.vimrc` into your terminal program, or by double-clicking on the
+file[^ln-home]. Here are a few common settings:
 
 [^ln-home]: You may need to enable "show hidden files" in the file explorer or
 finder of your choice.
@@ -265,26 +266,43 @@ examples. The authors' configuration files can be found
 [here](https://github.com/JonathanReeve/dotfiles) and
 [here](https://github.com/denten/.dotfiles). Your `.vimrc` file will soon
 become your prized possession. It is what makes Vim uniquely yours. We
-recommend that you do not add any lines there that you don't
-understand. A good `.vimrc` configuration file will be well annotated by the
-owner.
+recommend that you do not add any lines there that you don't understand. A good
+`.vimrc` configuration file will be well annotated by the owner.
 
 ### Spell Checking
 
-Vim has a built in spell-checking mode that you can activate by evoking `:set spell`. Since this is a long command to type, we can create a shorcut for it by adding this to our .vimrc: 
+Vim has a built in spell-checking mode that you can activate by evoking `:set
+spell`. Since this is a long command to type, we can create a shorcut for it by
+adding this to our `.vimrc`: 
 
-   map <F6> :set spell<CR>
+```vimscript
+map <F6> :set spell<CR>
+```
 
-Jonathan. Add instructions for adding a spell check shortcut to .vimrc and
-follow http://vimdoc.sourceforge.net/htmldoc/spell.html to glean the most
-useful shortcuts. Use the table format as above for common tasks.
+With spell mode enabled, here are some common commands you can use in normal mode: 
+
+| command  | meaning                                                       |
+|----------|---------------------------------------------------------------|
+| `]s`     | move to the next misspelled word                              | 
+| `[s`     | move to the previous misspelled word                          | 
+| `z=`     | offer spelling suggestions for the current word               | 
+| `zg`     | mark the current word as "good" (`g`) or correctly spelled    | 
+| `zw`     | mark the current word as "wrong" (`w`) or incorrectly spelled | 
+
+ :Spell Checking Commands
 
 ### Copy and Paste from Outside of Vim
 
-This is a common complaint. Cover it here.
+Vim features a very powerful copy-and-paste system. While most word processors
+can only copy and paste one thing at a time, Vim can store copied text in
+about forty separate registers. It does not, unfortunately, share the contents
+of these registers with the system clipboard by default, so copying and pasting
+from other applications takes some configuration. Add these lines to your
+vimrc: 
 
 ```
-set clipboard=unnamedplus       " Better copy & paste, needs a vim version newer than 7.3.74. 
+" Better copy & paste, needs a vim version newer than 7.3.74. 
+set clipboard=unnamedplus       
 ```
 
 ## Common Plugins
@@ -296,8 +314,11 @@ manager like [Vundle](https://github.com/gmarik/Vundle.vim). Here are a few
 that are useful for writing prose:
 
 * [goyo](https://github.com/junegunn/goyo.vim): a distraction-free writing mode
-* [online-thesaurus](https://github.com/beloglazov/vim-online-thesaurus): looks up the current word in an online thesaurus
-* [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): converts documents between many different formats, such as between vim-friendly markdown and Microsoft Word .docx
+* [online-thesaurus](https://github.com/beloglazov/vim-online-thesaurus): looks
+  up the current word in an online thesaurus
+* [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): converts documents
+  between many different formats, such as between vim-friendly markdown and
+  Microsoft Word .docx
 
 To find more, look through the directory [Vim Awesome](http://vimawesome.com/),
 which has a list of plugins, sorted by popularity. Although it is tempting to
