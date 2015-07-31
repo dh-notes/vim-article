@@ -68,6 +68,14 @@ Incidentally, the colon takes you to the "command mode." Here you can issue
 written commands to the editor, like `:w` to save or to "write" the file and
 `:q` to quit.
 
+| command   | meaning                                 |
+|-----------|-----------------------------------------|
+| `i`       | from normal mode, enter insert mode     | 
+| `Esc`     | from insert mode, enter normal mode     | 
+| `:`       | from normal mode, enter command mode    | 
+
+:Switching Modes in Vim
+
 Text awareness and composability of commands are some of the implemented ideas
 that make Vim such a powerful tool for academic writing. Text awareness means
 that the editor intrinsically "understands" humanly-meaningful semantic units
@@ -90,6 +98,15 @@ located mid-word or mid-sentence. Likewise, `dap` will delete the current
 paragraph, while something like `ci)` will "change inside parentheses,"
 allowing the author to replace rather than simply delete words. Try
 experimenting with incantations like `d2s` or `cap` to see what happens.
+
+| command   | meaning                                 |
+|-----------|-----------------------------------------|
+| `d3w`     | delete three words                      | 
+| `das`     | delete a sentence                       | 
+| `dap`     | delete a paragraph                      | 
+| `ci)`     | change all text inside parentheses      | 
+
+:Example commands
 
 Vim is ergonomically designed to keep your fingers at the keyboard, at the home
 row, minimizing finger movement involved in chord-like progressions like
@@ -150,17 +167,17 @@ verbs available to you include:
 |-----------|-----------------------|----------------|--------------|
 | `d`       | delete                | explicit       | `d7w`, `das` |
 | `r`       | replace               | character      | `r0`, `4r0`  |
-| `y`       | copy or yank          | explicit       | `yy`         |
+| `y`       | copy or yank          | explicit       | `yy`, `y3w`  |
 | `p`       | paste or put          | once           | `7p`         |
-| `a`       | append                | after cursor   |              |
-| `A`       | append                | end of line    |              |
-| `g`       | go                    | explicit
-| `u`       | undo                  | change stack    
-| `Ctrl-r`  | redo                  | undo stack
-| `.`       | repeat                | last action
-| `>`, `<`  | shift right, left     | current line   | `3>>`
-| `/`       | search forward       
-| `o`, `O`  | new line below, above
+| `a`       | append                | after cursor   |              | 
+| `A`       | append                | end of line    |              | 
+| `g`       | go                    | explicit       | `gg`         |
+| `u`       | undo                  | change stack   | `2u`         | 
+| `Ctrl-r`  | redo                  | undo stack     |              |
+| `.`       | repeat                | last action    | `9.`         |
+| `>`, `<`  | shift right, left     | current line   | `3>>`        |
+| `/`       | search forward        | current file   | `dt/the`     |  
+| `o`, `O`  | new line below, above | current line   |              | 
 
 : Vim Verbs 
 
@@ -180,7 +197,7 @@ Evoke `:help text-object` to learn more about text objects. The best way to
 understand text and motions objects (coming up next) is just to try using them
 with *delete* (`d`), *yank* (`y`) and *put* (`p`). Next come the motion
 commands, which like text objects give you a quick way to compose evocations
-like "delete the line above" and "move to the next parentheses."
+like "delete the line above" and "move to the next parenthesis."
 
 | command  | meaning                                  |  try          |
 |----------|------------------------------------------|---------------|
