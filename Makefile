@@ -1,7 +1,8 @@
 main.html : main.md
-	pandoc -o main.html main.md \
-	gnome-open main.pdf
+	pandoc -o build/main.html main.md \
+		--standalone
+	gnome-open main.html
 
 pdf: 
-	pandoc -o main.pdf main.md \ 
+	pandoc -o build/main.pdf main.md \
 		--latex-engine=xelatex

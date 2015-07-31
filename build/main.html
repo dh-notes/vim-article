@@ -17,6 +17,37 @@
 <p>Let's start with the most obvious one: Vim is a <strong>plain text</strong> editor. That means that you will use other tools to format and to set your text into print. In Vim, text is just text---there are no italics or fancy fonts to speak of. We use Markdown and Pandoc to format our texts and to generate files in Microsoft Word, Open Office, Adobe Acrobat, and HTML formats. If that sounds limiting, it is, on purpose! The Unix philosophy of software development values &quot;doing one thing and doing it well.&quot; Rather than being mediocre at many things related to word processing, Vim does one thing exceedingly well. Along with Emacs and a few other candidates for the title, it is the most advanced <em>text editor</em> available. Other complimentary and powerful tools can fill the role of typesetting and formatting of text.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Our goal then is to assemble a &quot;tool chain&quot; or a &quot;stack&quot; of programs that answer to the requirements of academic writing. Vim will serve as the first and the foundational building block in assembling that stack.</p>
 <p>Vim is further synonymous with <strong>modal editing</strong>. Modes will require the most cognitive adjustment for someone coming from mode-less text editing (Open Office, Microsoft Word, or Gmail, for example). The idea behind modal editing is simple. The process of writing consists of several distinct kinds of operations, chief among them typing and manipulating text. In most editors, those two things happen in the same &quot;place&quot; if you will. Vim organizes actions related to typing and actions related to text manipulation into separate modes. You type in what is called the &quot;insert mode,&quot; which functions pretty much as you would expect from using tools like Microsoft Word or Gmail. A whole new series of powerful text manipulation tools becomes available to the writer in &quot;normal mode.&quot; Think of it as lifting the pen from paper to pick up other tools like scissors and an eraser. In the <em>normal mode</em>, you can use your keyboard for editing text instead of typing. We will go over the commands in detail later. For now, you can start Vim (gVim or NeoVim) and press <code>i</code> to enter the <em>insert mode</em> (see bottom left of your screen). Type a few dummy sentences, then press <code>Esc</code> to exit into the <em>normal mode</em> again. As you get better at Vim you will spend more and more of your time in the <em>normal mode</em>. To quit Vim, type <code>:q</code>. Incidentally, the colon takes you to the &quot;command mode.&quot; Here you can issue written commands to the editor, like <code>:w</code> to save or to &quot;write&quot; the file and <code>:q</code> to quit.</p>
 <p>Text awareness and composability of commands are some of the implemented ideas that make Vim such a powerful tool for academic writing. Text awareness means that the editor intrinsically &quot;understands&quot; humanly-meaningful semantic units like characters, words, sentences, and paragraphs. Say for example you want to delete a word in your regular text editor. Pay attention to your exact keystrokes. It is likely that you would either just backspace a few times until the word is gone, or use the mouse to select the word to be deleted. This approach is slow and imprecise, because it treats text either as a sequence of individual characters or as a configuration of geometric shapes on the screen. You can still edit in that way in Vim's <em>insert mode</em> (<code>i</code>). But exit to the <em>normal mode</em> (by pressing <code>Esc</code>) and you are now able to delete the word under your cursor by typing <code>daw</code>. The keys <code>daw</code> stand for &quot;delete a word.&quot; Here's where things get neat. What do you think <code>d3w</code> does? As one would intuitively expect, <code>d3w</code> stands for &quot;delete three words.&quot; What about <code>das</code>? In <em>normal mode</em>, the incantation <code>das</code> stands for &quot;delete a sentence.&quot; In either case, the delete command will delete around your cursor position. Press <code>u</code> a few times in <em>normal mode</em> to undo. The incantations <code>daw</code> and <code>das</code> delete the current word and the current sentence, respectively, even when your cursor is located mid-word or mid-sentence. Likewise, <code>dap</code> will delete the current paragraph, while something like <code>ci)</code> will &quot;change inside parentheses,&quot; allowing the author to replace rather than simply delete words. Try experimenting with incantations like <code>d2s</code> or <code>cap</code> to see what happens.</p>
+<table>
+<caption>A Few Example Commands</caption>
+<thead>
+<tr class="header">
+<th align="left">command</th>
+<th align="left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>daw</code></td>
+<td align="left">delete a word</td>
+</tr>
+<tr class="even">
+<td align="left"><code>d3w</code></td>
+<td align="left">delete three words</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>das</code></td>
+<td align="left">delete a sentence</td>
+</tr>
+<tr class="even">
+<td align="left"><code>dap</code></td>
+<td align="left">delete a paragraph</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ci)</code></td>
+<td align="left">change all text inside parentheses</td>
+</tr>
+</tbody>
+</table>
 <p>Vim is ergonomically designed to keep your fingers at the keyboard, at the home row, minimizing finger movement involved in chord-like progressions like <code>Ctrl-C</code> and <code>Ctrl-V</code> (the usual way to copy and paste selections, for example). Instead of the arrow keys or the mouse, vimmers use <code>hjkl</code> for navigation. With time you can start using sentence-based navigation with <code>(</code> and <code>)</code>, or move around by paragraph with <code>[</code> and <code>]</code>. To move to the end of the line press <code>$</code>. To move to the beginning, try <code>0</code>. Remember to evoke these form the <em>normal mode</em>. Because you don't need to use the mouse that much (or at all) when you are good at Vim, and because the commands are compact, your wrists remain relatively still. Many writers report reduced hand strain. But these are small luxuries. The big payoff of modes and text awareness is <strong>command composability</strong>. In some important sense, Vim is a language for interacting with language. &quot;Delete a word&quot; has a grammatical structure: a verb and a noun. Once you become fluent in this language, you will be able to compose commands &quot;on the fly,&quot; without thinking or looking things up. A measure of flow and fluency becomes possible, elevating mere editing into handcraft.</p>
 <p>As with any language, the road to fluency is not short. But compared to a foreign language, Vim makes use of a small, controlled vocabulary. It is quick to learn. You will be able to do most common tasks after a week or so of practicing. And you can stop there. At a level of basic proficiency, Vim will already feel like a professional tool, adequate to the task of composing text with a sense of kinetic joy (some people liken it to being good at a video game). But once you understand that Vim is a language, you may also start getting interested in Vimscript, the computer language behind Vim. Although not the most beloved of computer languages, Vimscript ultimately offers <strong>a modular toolkit for building your own editor.</strong> Where other editors have fairly rigid ideas about how writing and text editing should work, Vim gives you complete control over all expects of word manipulation. For those not interested in programming, hundreds if not thousands of modules are available, tailoring Vim to individual needs and workflows. (We will cover the most common ones relevant to academic writing at the end of the article.)</p>
 <p>To summarize, Vim's philosophy is a set of related concepts that start with plain text and lead to modal editing, text awareness, command composability, and, finally, a language for building your own customized text editing software. Any of these ideas could be implemented independently of Vim. Vim just happens to implement all of them in one small package, installed on most of the world's computers (except for Windows) by default since the 1970s, available for free, and in open-source, making further modification possible. We want our colleagues to use Vim because we want our community to build better interfaces with the word. The text editor provides the foundations of all scholarly activity. It is therefore paramount that we develop mastery over and take ownership of the tool (and not the other way around).</p>
@@ -49,7 +80,7 @@
 <td align="left"><code>y</code></td>
 <td align="left">copy or yank</td>
 <td align="left">explicit</td>
-<td align="left"><code>yy</code></td>
+<td align="left"><code>yy</code>, <code>y3w</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>p</code></td>
@@ -73,21 +104,25 @@
 <td align="left"><code>g</code></td>
 <td align="left">go</td>
 <td align="left">explicit</td>
+<td align="left"><code>gg</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>u</code></td>
 <td align="left">undo</td>
 <td align="left">change stack</td>
+<td align="left"><code>2u</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>Ctrl-r</code></td>
 <td align="left">redo</td>
 <td align="left">undo stack</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><code>.</code></td>
 <td align="left">repeat</td>
 <td align="left">last action</td>
+<td align="left"><code>9.</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>&gt;</code>, <code>&lt;</code></td>
@@ -98,10 +133,14 @@
 <tr class="even">
 <td align="left"><code>/</code></td>
 <td align="left">search forward</td>
+<td align="left">current file</td>
+<td align="left"><code>dt/the</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>o</code>, <code>O</code></td>
 <td align="left">new line below, above</td>
+<td align="left">current line</td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -143,7 +182,7 @@
 </tr>
 </tbody>
 </table>
-<p>Evoke <code>:help text-object</code> to learn more about text objects. The best way to understand text and motions objects (coming up next) is just to try using them with <em>delete</em> (<code>d</code>), <em>yank</em> (<code>y</code>) and <em>put</em> (<code>p</code>). Next come the motion commands, which like text objects give you a quick way to compose evocations like &quot;delete the line above&quot; and &quot;move to the next parentheses.&quot;</p>
+<p>Evoke <code>:help text-object</code> to learn more about text objects. The best way to understand text and motions objects (coming up next) is just to try using them with <em>delete</em> (<code>d</code>), <em>yank</em> (<code>y</code>) and <em>put</em> (<code>p</code>). Next come the motion commands, which like text objects give you a quick way to compose evocations like &quot;delete the line above&quot; and &quot;move to the next parenthesis.&quot;</p>
 <table>
 <caption>Motion Commands</caption>
 <thead>
@@ -192,6 +231,7 @@
 <tr class="even">
 <td align="left"><code>n</code>, <code>N</code></td>
 <td align="left">next, previous (used with <code>/</code>)</td>
+<td align="left"><code>ytn</code></td>
 </tr>
 </tbody>
 </table>
@@ -248,8 +288,7 @@ set nocompatible
 &quot; This tells Vim not to format long lines of prose as if they were code.
 setlocal formatoptions=l
 
-&quot; Turn on word wrapping, to avoid typing really long lines that extend
-&quot; horizontally.
+&quot; Turn on word wrapping, to avoid typing long lines that extend horizontally.
 set wrap
 
 &quot; Break lines on words, instead of characters, which looks better for prose. 
@@ -305,7 +344,7 @@ set clipboard=unnamedplus       </code></pre>
 <li><a href="https://github.com/beloglazov/vim-online-thesaurus">online-thesaurus</a>: looks up the current word in an online thesaurus</li>
 <li><a href="https://github.com/vim-pandoc/vim-pandoc">vim-pandoc</a>: converts documents between many different formats, such as between vim-friendly markdown and Microsoft Word .docx</li>
 </ul>
-<p>To find more, look through the directory <a href="http://vimawesome.com/">Vim Awesome</a>, which has a list of plugins, sorted by popularity. Although it is tempting to jump into the world of Vim plugins right away, the common wisdom suggests deferring until intermediate to advanced proficiency is reached. The writers found it useful to tackle one customization at a time. Vim is a remarkably flexible and deep tool that can grow with the user's expertise. It is free and open source, which means that with enough users, we further tailor it to the needs of our academic community.</p>
+<p>To find more, look through the directory <a href="http://vimawesome.com/">Vim Awesome</a>, which has a list of plugins sorted by popularity. Although it is tempting to jump into the world of Vim plugins right away, the common wisdom suggests deferring until intermediate to advanced proficiency is reached. The writers found it useful to tackle one customization at a time. Vim is a remarkably flexible and deep tool that can grow with the user's expertise. It is free and open source, which means that with enough users, we further tailor it to the needs of our academic community.</p>
 <div class="footnotes">
 <hr />
 <ol>
