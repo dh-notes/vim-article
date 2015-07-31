@@ -93,12 +93,13 @@ experimenting with incantations like `d2s` or `cap` to see what happens.
 
 | command   | meaning                                 |
 |-----------|-----------------------------------------|
+| `daw`     | delete a word                           | 
 | `d3w`     | delete three words                      | 
 | `das`     | delete a sentence                       | 
 | `dap`     | delete a paragraph                      | 
 | `ci)`     | change all text inside parentheses      | 
 
-:Example commands
+:A Few Example Commands
 
 Vim is ergonomically designed to keep your fingers at the keyboard, at the home
 row, minimizing finger movement involved in chord-like progressions like
