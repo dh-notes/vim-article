@@ -198,10 +198,10 @@ like "delete the line above" and "move to the next parenthesis."
 | `h`, `l` | left, right                              | `3l`          |
 | `t`, `i` | until, inside                            | `dt`, `di"`   |
 | `w`, `b` | word forward, word backward              | `y3w`, `9b`   |  
-| `$`, `0` | until the end, beginning of line         | `y$`
-| `)`, `(` | beginning of the next, previous sentence | `d)`
-| `gg`, `G`| beginning and end of document            | `dG`
-| `n`, `N` | next, previous (used with `/`)          
+| `$`, `0` | until the end, beginning of line         | `y$`          | 
+| `)`, `(` | beginning of the next, previous sentence | `d)`          | 
+| `gg`, `G`| beginning and end of document            | `dG`          | 
+| `n`, `N` | next, previous (used with `/`)           | `ytn`         |  
 
 : Motion Commands
 
@@ -256,8 +256,7 @@ set nocompatible
 " This tells Vim not to format long lines of prose as if they were code.
 setlocal formatoptions=l
 
-" Turn on word wrapping, to avoid typing really long lines that extend
-" horizontally.
+" Turn on word wrapping, to avoid typing long lines that extend horizontally.
 set wrap
 
 " Break lines on words, instead of characters, which looks better for prose. 
@@ -331,7 +330,7 @@ that are useful for writing prose:
   Microsoft Word .docx
 
 To find more, look through the directory [Vim Awesome](http://vimawesome.com/),
-which has a list of plugins, sorted by popularity. Although it is tempting to
+which has a list of plugins sorted by popularity. Although it is tempting to
 jump into the world of Vim plugins right away, the common wisdom suggests
 deferring until intermediate to advanced proficiency is reached. The writers
 found it useful to tackle one customization at a time. Vim is a remarkably
