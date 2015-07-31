@@ -68,14 +68,6 @@ Incidentally, the colon takes you to the "command mode." Here you can issue
 written commands to the editor, like `:w` to save or to "write" the file and
 `:q` to quit.
 
-| command   | meaning                                 |
-|-----------|-----------------------------------------|
-| `i`       | from normal mode, enter insert mode     | 
-| `Esc`     | from insert mode, enter normal mode     | 
-| `:`       | from normal mode, enter command mode    | 
-
-:Switching Modes in Vim
-
 Text awareness and composability of commands are some of the implemented ideas
 that make Vim such a powerful tool for academic writing. Text awareness means
 that the editor intrinsically "understands" humanly-meaningful semantic units
