@@ -335,5 +335,5 @@ jump into the world of Vim plugins right away, the common wisdom suggests
 deferring until intermediate to advanced proficiency is reached. The writers
 found it useful to tackle one customization at a time. Vim is a remarkably
 flexible and deep tool that can grow with the user's expertise. It is free and
-open source, which means that with enough users, we further tailor it to the
+open source, which means that with enough users, we can further tailor it to the
 needs of our academic community.
